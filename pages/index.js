@@ -28,18 +28,29 @@ export default function Home() {
         </header>
 
         <main className="flex-grow container mx-auto px-4 py-8">
-          <section id="hero" className="mb-16 text-center">
-            <h1 className="text-5xl font-bold mb-4 text-primary-color">Find Your Dream Home in San Diego</h1>
-            <p className="text-xl mb-8">Discover the perfect property with Mellisa, your trusted real estate expert.</p>
-            <Link href="/contact" className="btn btn-primary">
-              Get Started
-            </Link>
+          <section id="hero" className="mb-16 text-center relative">
+            <div className="absolute inset-0 z-0">
+              <Image
+                src="/images/a_modern_luxury_house_in_san_diego_california.jpg"
+                alt="Modern luxury house in San Diego"
+                layout="fill"
+                objectFit="cover"
+                quality={100}
+              />
+            </div>
+            <div className="relative z-10 bg-black bg-opacity-50 p-8 rounded-lg">
+              <h1 className="text-5xl font-bold mb-4 text-white">Find Your Dream Home in San Diego</h1>
+              <p className="text-xl mb-8 text-white">Discover the perfect property with Mellisa, your trusted real estate expert.</p>
+              <Link href="/contact" className="btn btn-primary">
+                Get Started
+              </Link>
+            </div>
           </section>
 
           <section id="introduction" className="mb-16">
             <h2 className="text-3xl font-bold mb-4 text-center">Welcome to San Diego Real Estate</h2>
             <div className="flex flex-col md:flex-row items-center">
-              <Image src="/images/mellisa-photo.jpg" alt="Mellisa" width={300} height={300} className="rounded-full mb-4 md:mr-8" />
+              <Image src="/images/a_professional_real_estate_agent_helping_clients.jpg" alt="Mellisa helping clients" width={400} height={400} className="rounded-lg mb-4 md:mr-8" />
               <div>
                 <p className="text-lg mb-4">
                   Hi, I'm Mellisa! With years of experience in the San Diego real estate market, I'm passionate about helping you find the perfect home or investment property. My expertise in local neighborhoods, market trends, and negotiation skills ensures a smooth and successful real estate journey for you.
@@ -55,27 +66,27 @@ export default function Home() {
             <h2 className="text-3xl font-bold mb-6 text-center">Featured Listings</h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="bg-white shadow-md rounded-lg overflow-hidden">
-                <Image src="/images/property1.jpg" alt="Property 1" width={400} height={300} className="w-full" />
+                <Image src="/images/a_modern_luxury_house_in_san_diego_california.jpg" alt="Modern Luxury House" width={400} height={300} className="w-full object-cover" />
                 <div className="p-4">
                   <h3 className="text-xl font-bold mb-2">Coastal Retreat</h3>
                   <p className="text-gray-600 mb-2">$1,200,000 | 4 bed | 3 bath</p>
-                  <p>Stunning oceanfront property with panoramic views.</p>
+                  <p>Stunning modern luxury house with panoramic views.</p>
                 </div>
               </div>
               <div className="bg-white shadow-md rounded-lg overflow-hidden">
-                <Image src="/images/property2.jpg" alt="Property 2" width={400} height={300} className="w-full" />
+                <Image src="/images/a_beautiful_beach_scene_in_southern_california.jpg" alt="Beautiful Beach Scene" width={400} height={300} className="w-full object-cover" />
+                <div className="p-4">
+                  <h3 className="text-xl font-bold mb-2">Beachfront Paradise</h3>
+                  <p className="text-gray-600 mb-2">$2,500,000 | 5 bed | 4 bath</p>
+                  <p>Luxurious beachfront property with direct access to the shore.</p>
+                </div>
+              </div>
+              <div className="bg-white shadow-md rounded-lg overflow-hidden">
+                <Image src="/images/a_cozy_living_room_interior_in_a_san_diego_home.jpg" alt="Cozy Living Room" width={400} height={300} className="w-full object-cover" />
                 <div className="p-4">
                   <h3 className="text-xl font-bold mb-2">Urban Oasis</h3>
-                  <p className="text-gray-600 mb-2">$750,000 | 3 bed | 2 bath</p>
-                  <p>Modern condo in the heart of downtown San Diego.</p>
-                </div>
-              </div>
-              <div className="bg-white shadow-md rounded-lg overflow-hidden">
-                <Image src="/images/property3.jpg" alt="Property 3" width={400} height={300} className="w-full" />
-                <div className="p-4">
-                  <h3 className="text-xl font-bold mb-2">Suburban Gem</h3>
-                  <p className="text-gray-600 mb-2">$950,000 | 5 bed | 4 bath</p>
-                  <p>Spacious family home in a quiet, upscale neighborhood.</p>
+                  <p className="text-gray-600 mb-2">$950,000 | 3 bed | 2 bath</p>
+                  <p>Modern condo with a cozy interior in the heart of San Diego.</p>
                 </div>
               </div>
             </div>

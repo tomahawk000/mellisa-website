@@ -21,9 +21,9 @@ export default function Listings() {
 
   // Placeholder data for property listings
   const properties = [
-    { id: 1, title: 'Coastal Retreat', price: 1200000, bedrooms: 4, bathrooms: 3, type: 'House', location: 'La Jolla', image: '/images/property1.jpg' },
-    { id: 2, title: 'Urban Oasis', price: 750000, bedrooms: 3, bathrooms: 2, type: 'Condo', location: 'Downtown', image: '/images/property2.jpg' },
-    { id: 3, title: 'Suburban Gem', price: 950000, bedrooms: 5, bathrooms: 4, type: 'House', location: 'Poway', image: '/images/property3.jpg' },
+    { id: 1, title: 'Coastal Retreat', price: 1200000, bedrooms: 4, bathrooms: 3, type: 'House', location: 'La Jolla', image: '/images/a_modern_luxury_house_in_san_diego_california.jpg' },
+    { id: 2, title: 'Urban Oasis', price: 750000, bedrooms: 3, bathrooms: 2, type: 'Condo', location: 'Downtown', image: '/images/san_diego_skyline_at_sunset.jpg' },
+    { id: 3, title: 'Suburban Gem', price: 950000, bedrooms: 5, bathrooms: 4, type: 'House', location: 'Poway', image: '/images/a_cozy_living_room_interior_in_a_san_diego_home.jpg' },
     // Add more properties as needed
   ]
 
@@ -105,7 +105,7 @@ export default function Listings() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {properties.map(property => (
               <div key={property.id} className="bg-white shadow-md rounded-lg overflow-hidden">
-                <Image src={property.image} alt={property.title} width={400} height={300} className="w-full" />
+                <Image src={property.image} alt={property.title} width={400} height={300} className="w-full object-cover" />
                 <div className="p-4">
                   <h3 className="text-xl font-bold mb-2">{property.title}</h3>
                   <p className="text-gray-600 mb-2">${property.price.toLocaleString()} | {property.bedrooms} bed | {property.bathrooms} bath</p>

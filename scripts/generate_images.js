@@ -1,9 +1,11 @@
-const axios = require('axios');
-const fs = require('fs');
-const path = require('path');
+import ideogram from '@api/ideogram';
+import fs from 'fs';
+import path from 'path';
+import axios from 'axios';
+import { fileURLToPath } from 'url';
 
-const apiKey = process.env.Vercel_Key;
-const apiUrl = 'https://api.ideogram.ai/generate';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const prompts = [
   'A modern luxury house in San Diego, California',
@@ -15,21 +17,15 @@ const prompts = [
 
 async function generateImage(prompt) {
   try {
-    const response = await axios.post(apiUrl, {
+    const { data } = await ideogram.post_generate_image({
       image_request: {
         prompt: prompt,
-        style: 'photographic',
-        width: 1024,
-        height: 1024
-      }
-    }, {
-      headers: {
-        'Api-Key': apiKey,
-        'Content-Type': 'application/json'
+        model: 'V_2',
+        magic_prompt_option: 'AUTO'
       }
     });
 
-    const imageUrl = response.data.image_url;
+    const imageUrl = data.image_url;
     const imageName = `${prompt.replace(/\s+/g, '_').toLowerCase()}.jpg`;
     const imagePath = path.join(__dirname, '..', 'public', 'images', imageName);
 
